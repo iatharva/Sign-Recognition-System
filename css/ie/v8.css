@@ -1,0 +1,12 @@
+/*
+	Folio by Pixelarity
+	pixelarity.com @pixelarity
+	License: pixelarity.com/license
+*/
+
+body:after,
+.button:before,
+#main:before
+{
+	display: none;
+}
