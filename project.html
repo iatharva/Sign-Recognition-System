@@ -73,11 +73,10 @@
 									<!-- Content -->
 										<div id="contact" class="12u">
 											<header>
-												<h2></h2>
+												<h2>Teachable Machine Image Model</h2>
 											</header>
 
 											<section class="12u">
-												<div>Teachable Machine Image Model</div>
                                                 <button type="button" onclick="init()">Start</button>
                                                 <div id="webcam-container"></div>
                                                 <div id="label-container"></div>
@@ -130,7 +129,7 @@
                     maxPredictions = model.getTotalClasses();
             
                     // Convenience function to setup a webcam
-                    webcam = new tmImage.Webcam(224, 224); // width, height, flip
+                    webcam = new tmImage.Webcam(224, 224, 3); // width, height,RGB
                     await webcam.setup(); // request access to the webcam
                     await webcam.play();
                     window.requestAnimationFrame(loop);
