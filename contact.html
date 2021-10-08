@@ -170,7 +170,39 @@
 		
   firebase.initializeApp(firebaseConfig);
   const docRef = firebase.firestore();
+  //connecting html element
+  const fname = document.querySelector("#name");
+  const femail = document.querySelector("#email");
+  const fmessage = document.querySelector("#message");
+  const fsubmit = document.querySelector("#submit");
+		
+  fsubmit.addEventListener("click", function() {
 
+    if(!fname.value || !femail.value || !fmessage.value){
+      alert("Fill all the fields");
+    }else{
+      savemessages();
+    }
+    });
+		
+  function savemessages(){
+
+  docRef.collection("Messages").add(
+    {
+      rname: fname.value,
+      remail: femail.value,
+      rmessage: fmessage.value,
+
+    }
+    ).then(function(docRef){
+        console.log("Document written with ID -", docRef.id);
+        window.location.href='sent.html';
+      }
+    ).catch(function(error){
+        console.error("Error while adding document ", error);
+        window.location.href='failed.html';
+      })
+}
 </script>
 	</body>
 </html>
