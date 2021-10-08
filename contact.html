@@ -77,28 +77,27 @@
 											</header>
 
 											<section class="12u">
-												<form method="post" action="#">
 													<div class="row 50%">
 														<div class="6u">
-															<input name="name" placeholder="Name" type="text" class="text" />
+															<input id="name" name="name" placeholder="Name" type="text" class="text" />
 														</div>
 														<div class="6u">
-															<input name="email" placeholder="Email" type="text" class="text" />
+															<input id="email" name="email" placeholder="Email" type="text" class="text" />
 														</div>
 													</div>
 													<div class="row 50%">
 														<div class="12u">
-															<textarea name="message" placeholder="Message"></textarea>
+															<textarea id="message" name="message" placeholder="Message"></textarea>
 														</div>
 													</div>
 													<div class="row">
 														<div class="12u">
 															<ul class="actions">
-																<li><a href="#" class="button form-button-submit">Send Message</a></li>
+																<!--<li><a href="#" class="button form-button-submit">Send Message</a></li>-->
+																<li> <button id="submit" class="button form-button-submit" >Send Message</button></li>
 															</ul>
 														</div>
 													</div>
-												</form>
 											</section>
 											
 										</div>
@@ -168,6 +167,9 @@
   const app = initializeApp(firebaseConfig);
 
   const analytics = getAnalytics(app);
+		
+  firebase.initializeApp(firebaseConfig);
+  const docRef = firebase.firestore();
 
 </script>
 	</body>
